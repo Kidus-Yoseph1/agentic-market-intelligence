@@ -1,0 +1,44 @@
+research_task:
+  description: >
+    1. Use search tools to identify the top 3 established competitors for {topic}.
+    2. Find 2 emerging 'hidden gem' startups or open-source projects.
+    3. Document their primary value proposition and any recent news (within the last 6 months).
+    4. Focus on finding 'signal'—skip general marketing blurbs and find actual user feedback or feature updates.
+  expected_output: >
+    A structured list containing:
+    - Competitor Name & URL
+    - Core Value Prop
+    - Recent Key Update/News
+    - 2 Emerging Trends in the space
+  agent: researcher
+
+technical_audit_task:
+  description: >
+    Review the list of companies provided by the Researcher. 
+    1. For each company, investigate their technical footprint. 
+    2. Check GitHub for activity, languages used, and open-source contributions.
+    3. Analyze their API documentation (if public) to assess their 'developer experience' and technical maturity.
+    4. Flag any 'vaporware' that has no actual technical substance behind the marketing.
+  expected_output: >
+    A technical audit report for each competitor including:
+    - Estimated Tech Stack
+    - GitHub Activity Level (High/Med/Low)
+    - API Maturity Score (1-10)
+    - Technical Red Flags (if any)
+  agent: auditor
+  context: [research_task] 
+
+strategy_synthesis_task:
+  description: >
+    Review the Market Research and the Technical Audit.
+    1. Identify the 'Gaps'—what is every competitor missing?
+    2. Provide a 'Build vs. Buy vs. Partner' recommendation for a new player entering this space.
+    3. Draft the final report in clean Markdown, optimized for a CEO/Founder's quick reading.
+  expected_output: >
+    A 3-section Markdown Report:
+    - Executive Summary (The 'Bottom Line')
+    - Competitive Landscape Map (Technical vs Market Strength)
+    - Strategic Recommendation (Next 3 steps to take)
+  agent: manager
+  context: [research_task, technical_audit_task]
+  output: report.md
