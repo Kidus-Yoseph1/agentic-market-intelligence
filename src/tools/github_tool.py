@@ -7,8 +7,11 @@ from crewai.tools import tool
 def github_repo_auditor(repo_name: str):
 
     """
-    Get technical stats for a github repository.
+    Analyzes a GitHub repository and returns technical stats like stars, issues, and forks.
+    Args:
+        repo_name (str): The full repository name in 'owner/repo' format (e.g., 'crewAIInc/crewAI').
     """
+    
 
     token = os.getenv("GITHUB_TOKEN")
     header = {"Authorization": f"toekn {token}"} if token else {}
