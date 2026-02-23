@@ -12,7 +12,7 @@ researcher:
     (to see what they are building), and GitHub activity. You provide the raw, 
     verified facts that the rest of the squad depends on."
 
-Auditor:
+auditor:
   role: >
     {topic} Technical Systems Architect & Auditor
 
@@ -28,7 +28,7 @@ Auditor:
 
 manager:
   role: >
-    {tolpic} Chief of Staff / Strategic Orchestrator
+    {topic} Chief of Staff / Strategic Orchestrator
   
   goal: "Synthesize all intelligence into a high-level executive strategy report"
 

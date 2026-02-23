@@ -41,4 +41,4 @@ strategy_synthesis_task:
     - Strategic Recommendation (Next 3 steps to take)
   agent: manager
   context: [research_task, technical_audit_task]
-  output: report.md
+  output_file: report.md
