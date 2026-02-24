@@ -9,7 +9,7 @@ def run(topic: str):
     try:
         result = Agentic_Market_Intelligence().crew().kickoff(inputs=inputs)
         print("Final Strategy Report")
-        print(result.raw)
+        return result.raw
     except Exception as e:
-        print(f"An error occured while running the crew: {e}")
+        return f"An error occured while running the crew: {e}"
 
